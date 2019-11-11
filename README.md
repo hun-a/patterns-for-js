@@ -39,5 +39,5 @@
     - You could resolve it by flattening the callbacks like [this](./patterns/callback/callback-arrow-solution.js).
   - `this`
     - `this` is very strange things in JavaScript so [it](./patterns/callback/callback-this-problem.js) could reference another object you didn't expect.
-    - You could resolve this problem by explicitly defining the `this`.
+    - [You could resolve this problem](./patterns/callback/index.js#L65) by explicitly defining the `this`.
     - Or use the [`Arrow function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) of EC6 spec.

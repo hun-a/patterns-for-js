@@ -62,7 +62,7 @@ Conference.checkInService = function(checkInRecorder) {
 Conference.checkedInAttendeeCounter = function() {
   var checkedInAttendees = 0;
 
-  return {
+  var self = {
     increment: function() {
       checkedInAttendees++;
     },
@@ -71,10 +71,12 @@ Conference.checkedInAttendeeCounter = function() {
     },
     countIfCheckedIn: function(attendee) {
       if (attendee.isCheckedIn()) {
-        this.increment();
+        self.increment();
       }
     }
-  }
+  };
+
+  return self;
 };
 
 module.exports = Conference;
