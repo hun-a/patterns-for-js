@@ -35,7 +35,7 @@ Conference.attendeeCollection = function() {
       }
     },
     iterate: function(callback) {
-      // TODO
+      attendees.forEach(callback);
     }
   }
 };

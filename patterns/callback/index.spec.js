@@ -26,18 +26,18 @@ describe('Conference.attendeeCollection', function() {
     function verifyCallbackWasExecutedForEachAttendee(attendeeArray) {
       // Check if the spy is called once for each element
 
-      expect(callbackSpy.calls.length).toBe(attendeeArray.length);
+      expect(callbackSpy.mock.calls.length).toBe(attendeeArray.length);
 
       // Check the first argument of attendee is delivered from the spy on each call
-      var allCalls = callbackSpy.calls.all();
+      var allCalls = callbackSpy.mock.calls;
       for (var i = 0; i < allCalls.length; i++) {
-        expect(allCalls[i].args[0]).toBe(attendeeArray[i]);
+        expect(allCalls[i][0]).toBe(attendeeArray[i]);
       }
     }
 
     beforeEach(function() {
       collection = Conference.attendeeCollection();
-      callbackSpy = jest.spyOn(collection, 'iterate');
+      callbackSpy = jest.fn();
     });
 
     it('should never call when the collection is empty', function() {
