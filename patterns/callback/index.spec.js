@@ -70,4 +70,28 @@ describe('Conference.attendeeCollection', function() {
       verifyCallbackWasExecutedForEachAttendee(attendees);
     });
   });
+
+  describe('Conference.checkInService', function() {
+    var checkInService, checkInRecorder, attendee;
+
+    beforeEach(function() {
+      checkInRecorder = Conference.checkInRecorder();
+      jest.spyOn(checkInRecorder, 'recordCheckIn');
+
+      checkInService = Conference.checkInService(checkInRecorder);
+      attendee = Conference.attendee('Huna', 'Kim');
+    });
+
+    describe('CheckInService(attendee)', function() {
+      it('should process the attendee to the checked-in status', function() {
+        checkInService.checkIn(attendee);
+        expect(attendee.isCheckedIn()).toBe(true);
+      });
+
+      it('should register the check-in', function() {
+        checkInService.checkIn(attendee);
+        expect(checkInRecorder.recordCheckIn).toHaveBeenCalledWith(attendee);
+      });
+    });
+  });
 });
