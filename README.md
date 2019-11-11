@@ -29,3 +29,10 @@
     - The callback should never call when the collection is empty
     - The callback should call just once when the collection has one element
     - The callback should call once for each element
+
+- The problems
+  - Anonymous function
+    - It makes impossible to debug the callback function.
+    - You could resolve it by replacing the anonymous function to the named function [here](./patterns/callback/run.js#L12).
+  - Callback arrow
+  - this
