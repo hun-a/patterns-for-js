@@ -35,4 +35,6 @@
     - It makes impossible to debug the callback function.
     - You could resolve it by replacing the anonymous function to the named function [here](./patterns/callback/run.js#L12).
   - Callback arrow
+    - [It](./patterns/callback/callback-arrow-problem.js) is hard for both the unit tests and fixes.
+    - You could resolve it by flattening the callbacks like [this](./patterns/callback/callback-arrow-solution.js).
   - this
