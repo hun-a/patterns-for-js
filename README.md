@@ -4,7 +4,7 @@
 
 # List of Patterns
 
-## Callback pattern
+## [Callback pattern](./patterns/callback/index.js#L37)
 
 - Business logic
   - I develop the `Check-in` module for the biggest of a world conference.
