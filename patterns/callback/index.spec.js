@@ -94,4 +94,39 @@ describe('Conference.attendeeCollection', function() {
       });
     });
   });
+
+  describe('Conference.checkedInAttendeeCounter', function() {
+    var counter;
+
+    beforeEach(function() {
+      counter = Conference.checkedInAttendeeCounter();
+    });
+
+    describe('increment()', function() {
+      // Suppose this test will be pass.
+    });
+
+    describe('getCount()', function() {
+      // Suppose this test will be pass.
+    });
+
+    describe('countIfCheckedIn(attendee)', function() {
+      var attendee;
+
+      beforeEach(function() {
+        attendee = Conference.attendee('Huna', 'Kim');
+      });
+
+      it("shouldn't count when an attendee is not check-in", function() {
+        counter.countIfCheckedIn(attendee);
+        expect(counter.getCount()).toBe(0);
+      });
+
+      it('should count when an attendee is check-in', function() {
+        attendee.checkIn();
+        counter.countIfCheckedIn(attendee);
+        expect(counter.getCount()).toBe(1);
+      });
+    });
+  });
 });

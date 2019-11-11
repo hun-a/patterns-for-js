@@ -37,4 +37,7 @@
   - Callback arrow
     - [It](./patterns/callback/callback-arrow-problem.js) is hard for both the unit tests and fixes.
     - You could resolve it by flattening the callbacks like [this](./patterns/callback/callback-arrow-solution.js).
-  - this
+  - `this`
+    - `this` is very strange things in JavaScript so it could reference another object you didn't expect.
+    - You could resolve this problem by explicitly defining the `this`.
+    - Or use the [`Arrow function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) of EC6 spec.
