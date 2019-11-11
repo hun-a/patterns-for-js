@@ -59,8 +59,8 @@ describe('Conference.attendeeCollection', function() {
     it('should call the callback once for each element', function() {
       var attendees = [
         Conference.attendee('Huna', 'Kim'),
-        Conference.attendee('Haeun', 'Kim'),
-        Conference.attendee('Hajun', 'Kim')
+        Conference.attendee('Chew', 'Hi'),
+        Conference.attendee('Dot', 'Com')
       ];
 
       addAttendeesToCollection(attendees);
@@ -125,6 +125,12 @@ describe('Conference.attendeeCollection', function() {
       it('should count when an attendee is check-in', function() {
         attendee.checkIn();
         counter.countIfCheckedIn(attendee);
+        expect(counter.getCount()).toBe(1);
+      });
+
+      it('should check the `this` because it could reference you didn\'t expect', function() {
+        attendee.checkIn();
+        counter.countIfCheckedIn.call({}, attendee);
         expect(counter.getCount()).toBe(1);
       });
     });
