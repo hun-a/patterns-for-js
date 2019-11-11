@@ -40,4 +40,23 @@ Conference.attendeeCollection = function() {
   }
 };
 
+Conference.checkInRecorder = function() {
+  return {
+    recordCheckIn: function(attendee) {
+      // Check in through external service
+    }
+  }
+};
+
+Conference.checkInService = function(checkInRecorder) {
+  var recorder = checkInRecorder;
+
+  return {
+    checkIn: function(attendee) {
+      attendee.checkIn();
+      recorder.recordCheckIn(attendee);
+    }
+  };
+};
+
 module.exports = Conference;
