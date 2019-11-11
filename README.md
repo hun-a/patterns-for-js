@@ -18,8 +18,7 @@
   - I develop the `Check-in` module for the biggest of a world conference.
   - The attendees should input their information by the function of `Conference.attendee()`.
   - All attendee's information should handle by `Conference.attendeeCollection.iterate()` and send to `checkInService`.
-    - The `checkInService` is not my concern.
-    - I have only concern to `iterate()` function.
+    - The [`checkInService`](./patterns/callback/index.js#L51) could check-in the information of the attendee to the Database.
   - The `iterate()` function should have scalability using a callback function.
 
 - [Test scenario](./patterns/callback/index.spec.js#L16)
