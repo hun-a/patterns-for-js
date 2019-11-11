@@ -1,0 +1,15 @@
+{
+  "name": "patterns-for-js",
+  "version": "1.0.0",
+  "description": "The patterns for Js",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage ."
+  },
+  "keywords": [],
+  "author": "hun-a",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
