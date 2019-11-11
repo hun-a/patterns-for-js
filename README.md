@@ -2,6 +2,14 @@
 
 - Popular Design patterns for JavaScript!
 
+# How to run?
+
+- Just type the below command to your cmd.
+
+  ```
+  $ npm i && npm run test
+  ```
+
 # List of Patterns
 
 ## Callback pattern
