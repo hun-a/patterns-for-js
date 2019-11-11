@@ -23,6 +23,10 @@
   - The `iterate()` function should have scalability using a callback function.
 
 - [Test scenario](./patterns/callback/index.spec.js#L16)
-  - The callback should never call when the collection is empty
-  - The callback should call just once when the collection has one element
-  - The callback should call once for each element
+  - Main purpose
+    - The count of calling callback should be correct.
+    - The correct argument should deliver to the callback when it called.
+  - Details
+    - The callback should never call when the collection is empty
+    - The callback should call just once when the collection has one element
+    - The callback should call once for each element
